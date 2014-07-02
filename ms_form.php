@@ -34,9 +34,9 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-	    <li class="active"><a href="index.php">Accueil</a></li>
-            <li><a href="ms_form.php">MS Ticket</a></li>
-            <li><a href="cs_form.php">CS Ticket</a></li>
+	    <li ><a href="index.php">Accueil</a></li>
+            <li class="active"><a href="ms_form.php">MS Ticket</a></li>
+            <li ><a href="cs_form.php">CS Ticket</a></li>
             <li><a href="admin.php">Admin</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -46,8 +46,8 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Welcome</h1>
-        <p class="lead">Bienvenue dans l'application de gestion des tickets.</p>
+        <h1>MS Form</h1>
+        
       </div>
 
     </div><!-- /.container -->
