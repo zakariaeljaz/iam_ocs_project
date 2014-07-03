@@ -53,17 +53,17 @@ if($_SESSION['login_type'] != "iam"){
       <div class="starter-template">
         <h1>Générer un ticket de support</h1><br /><br />
 	<form method="post" action="traitement.php">
-	  <select class="form-control input-lg" id="type">
+	  <select class="form-control input-lg" id="type" name="type">
 	    <option>MS Maintenance Activity</option>
 	    <option>CS Maintenance Activity</option>
 	  </select><br />
-	  <select class="form-control input-lg" id="priority">
+	  <select class="form-control input-lg" id="priority" name="priority">
 	    <option>Low Priority</option>
 	    <option>Medium Priority</option>
 	    <option>High Priority</option>
 	  </select><br />
 	  <div class="input-group input-group-lg">
-	    <input type="text" class="form-control" placeholder="Issue Description">
+	    <input type="text" class="form-control" placeholder="Issue Description" name="description">
 	    <span class="input-group-btn">
               <button class="btn btn-default" type="submit">Send</button>
 	    </span>
