@@ -51,11 +51,11 @@
 	<form role="form" style="width=100px" method="post" action="login.php">
   		<div class="form-group">
     		<label for="exampleInputEmail1">Identifiant</label>
-   		 <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter identifiant">
+   		 <input type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="Enter identifiant">
   		</div>
   		<div class="form-group">
 	       <label for="exampleInputPassword1">Password</label>
-	       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
+	       <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Mot de passe">
 	       <div class="checkbox">
                  <label>
                  <input type="checkbox">Garder ma session active
