@@ -50,6 +50,7 @@ if($_SESSION['login_type'] != "huawei"){
             
             <li ><a href="ticket_form.php">Ticket Form</a></li>
             <li class="active"><a href="adminpage.php">Admin Panel</a></li>
+	    <li> <a href="logout.php">Déconnexion</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

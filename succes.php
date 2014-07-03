@@ -1,15 +1,3 @@
-<?php 
-session_start();
-
-if($_SESSION['login_type'] == "huawei"){
-   header('Location: /iam_ocs_project.git/trunk/adminpage.php');  
-  exit();
-}
-if($_SESSION['login_type'] != "iam"){
-   header('Location: /iam_ocs_project.git/trunk/index.php');  
-  exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,7 +36,7 @@ if($_SESSION['login_type'] != "iam"){
 	    <li ><a href="index.php">Accueil</a></li>
              <li class="active"><a href="ticket_form.php">Ticket Form</a></li>
             <li><a href="adminpage.php">Admin Panel</a></li>
-            <li> <a href="logout.php">Déconnexion</a></li>
+	    <li> <a href="logout.php">Déconnexion</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -57,26 +45,9 @@ if($_SESSION['login_type'] != "iam"){
     <div class="container">
 
       <div class="starter-template">
-        <h1>Générer un ticket de support</h1><br /><br />
-	<form method="post" action="traitement.php">
-	  <select class="form-control input-lg" id="type" name="type">
-	    <option>MS Maintenance Activity</option>
-	    <option>CS Maintenance Activity</option>
-	  </select><br />
-	  <select class="form-control input-lg" id="priority" name="priority">
-	    <option>Low Priority</option>
-	    <option>Medium Priority</option>
-	    <option>High Priority</option>
-	  </select><br />
-	  <div class="input-group input-group-lg">
-	    <input type="text" class="form-control" placeholder="Issue Description" name="description">
-	    <span class="input-group-btn">
-              <button class="btn btn-default" type="submit">Send</button>
-	    </span>
-	  </div>
-	</form>
-      </div>
-      
+        <h1>Ticket généré avec succès</h1><br /><br />
+	<a href="ticket_form.php">retour</a>
+   
     </div><!-- /.container -->
     
       </div>
@@ -91,3 +62,4 @@ if($_SESSION['login_type'] != "iam"){
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
+
