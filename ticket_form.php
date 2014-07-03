@@ -1,5 +1,10 @@
 <?php 
 session_start();
+
+if($_SESSION['login_type'] == "huawei"){
+   header('Location: /iam_ocs_project.git/trunk/adminpage.php');  
+  exit();
+}
 if($_SESSION['login_type'] != "iam"){
    header('Location: /iam_ocs_project.git/trunk/index.php');  
   exit();
