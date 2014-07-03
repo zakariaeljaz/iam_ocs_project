@@ -41,10 +41,10 @@ if($_SESSION['login_type'] != "huawei"){
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-	    <li class="active"><a href="index.php">Accueil</a></li>
+	    <li ><a href="index.php">Accueil</a></li>
             
             <li ><a href="ticket_form.php">Ticket Form</a></li>
-            <li><a href="admin.php">Admin</a></li>
+            <li class="active"><a href="adminpage.php">Admin Panel</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

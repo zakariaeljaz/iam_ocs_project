@@ -42,7 +42,7 @@ if($_SESSION['login_type'] != "iam"){
           <ul class="nav navbar-nav">
 	    <li ><a href="index.php">Accueil</a></li>
              <li class="active"><a href="ticket_form.php">Ticket Form</a></li>
-            <li><a href="admin.php">Admin</a></li>
+            <li><a href="adminpage.php">Admin Panel</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
