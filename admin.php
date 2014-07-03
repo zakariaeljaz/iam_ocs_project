@@ -35,8 +35,8 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
 	    <li ><a href="index.php">Accueil</a></li>
-            <li ><a href="ms_form.php">MS Ticket</a></li>
-            <li ><a href="cs_form.php">CS Ticket</a></li>
+            
+            <li ><a href="ticket_form.php">Ticket Form</a></li>
             <li class="active"><a href="admin.php">Admin</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -47,6 +47,22 @@
 
       <div class="starter-template">
         <h1>Admin</h1>
+	
+	<form role="form" style="width=200px">
+  		<div class="form-group">
+    		<label for="exampleInputEmail1">Identifiant</label>
+   		 <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter identifiant">
+  		</div>
+  		<div class="form-group">
+	       <label for="exampleInputPassword1">Password</label>
+	       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
+	       <div class="checkbox">
+                 <label>
+                 <input type="checkbox">Garder ma session active
+                 </label>
+              </div>
+      <button type="submit" class="btn btn-default">Connexion</button>
+      </form>
         
       </div>
 
