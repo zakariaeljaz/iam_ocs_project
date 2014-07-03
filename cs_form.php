@@ -35,8 +35,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
 	    <li ><a href="index.php">Accueil</a></li>
-            <li><a href="ms_form.php">MS Ticket</a></li>
-            <li class="active"><a href="cs_form.php">CS Ticket</a></li>
+             <li class="active"><a href="ticket_form.php">CS Ticket</a></li>
             <li><a href="admin.php">Admin</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -46,8 +45,28 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>CS Form</h1>
-        
+        <h1>Générer un ticket de support</h1><br /><br />
+	<form method="post" action="traitement.php">
+	  <select class="form-control input-lg" id="type">
+	    <option>MS Maintenance Activity</option>
+	    <option>CS Maintenance Activity</option>
+	  </select><br />
+	  <select class="form-control input-lg" id="priority">
+	    <option>Low Priority</option>
+	    <option>Medium Priority</option>
+	    <option>High Priority</option>
+	  </select><br />
+	  <div class="input-group input-group-lg">
+	    <input type="text" class="form-control" placeholder="Issue Description">
+	    <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Send</button>
+	    </span>
+	  </div>
+	</form>
+      </div>
+      
+    </div><!-- /.container -->
+    
       </div>
 
     </div><!-- /.container -->
