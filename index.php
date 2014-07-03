@@ -48,8 +48,8 @@
       <div class="starter-template">
         <h1>Welcome</h1>
         <p class="lead">Bienvenue dans l'application de gestion des tickets.</p>
-	<h3>espace d'authentification </h3>
-	<form role="form" style="width=200px">
+	<h3>Espace d'authentification </h3>
+	<form role="form" method="post" action="login.php">
   		<div class="form-group">
     		<label for="exampleInputEmail1">Identifiant</label>
    		 <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter identifiant">
