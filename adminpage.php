@@ -72,6 +72,7 @@ include('bdd.php');
         <ul class="nav nav-tabs" role="tablist">
           <li class="active"><a href="#attente" role="tab" data-toggle="tab">En attente</a></li>
           <li><a href="#encours" role="tab" data-toggle="tab">En cours</a></li>
+          <li><a href="#termine" role="tab" data-toggle="tab">Terminé</a></li>
         </ul>
 
         <!-- Tab panes -->
@@ -84,6 +85,7 @@ include('bdd.php');
 
              <li class="list-group-item">
               <span class="badge"><?php echo $donnees['Priority'] ?></span>
+              <span class="badge"><?php echo $donnees['Issue_type'] ?></span>
                 <a href="take_ticket.php?id=<?php echo $donnees['id'] ?>"><?php echo $donnees['Issue_description'] ?></a>
             </li>
             <?php } ?>
@@ -104,12 +106,32 @@ include('bdd.php');
 
              <li class="list-group-item">
               <span class="badge"><?php echo $donnees['Priority'] ?></span>
+                            <span class="badge"><?php echo $donnees['Issue_type'] ?></span>
+
                 <a href="#"><?php echo $donnees['Issue_description'] ?></a>
             </li>
             <?php } ?>
            
             </ul>
           </div>
+
+          <div class="tab-pane" id="termine">
+             <ul class="list-group">
+            <?php $reponse = $bdd->prepare('SELECT * FROM MS_CS WHERE taken_by = ?'); ?>
+            <?php $reponse->execute(array(-1)); ?>
+            <?php while ($donnees = $reponse->fetch()){ ?>
+
+             <li class="list-group-item">
+              <span class="badge"><?php echo $donnees['Priority'] ?></span>
+                            <span class="badge"><?php echo $donnees['Issue_type'] ?></span>
+
+                <a href="#"><?php echo $donnees['Issue_description'] ?></a>
+            </li>
+            <?php } ?>
+           
+            </ul>
+          </div>
+
         </div>
      </div>
 	
