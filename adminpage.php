@@ -84,7 +84,7 @@ include('bdd.php');
 
              <li class="list-group-item">
               <span class="badge"><?php echo $donnees['Priority'] ?></span>
-                <a href="#"><?php echo $donnees['Issue_description'] ?></a>
+                <a href="take_ticket.php?id=<?php echo $donnees['id'] ?>"><?php echo $donnees['Issue_description'] ?></a>
             </li>
             <?php } ?>
            
@@ -96,7 +96,20 @@ include('bdd.php');
 
 
           </div>
-          <div class="tab-pane" id="encours">...</div>
+          <div class="tab-pane" id="encours">
+             <ul class="list-group">
+            <?php $reponse = $bdd->prepare('SELECT * FROM MS_CS WHERE taken_by = ?'); ?>
+            <?php $reponse->execute(array($_SESSION['user_id'])); ?>
+            <?php while ($donnees = $reponse->fetch()){ ?>
+
+             <li class="list-group-item">
+              <span class="badge"><?php echo $donnees['Priority'] ?></span>
+                <a href="#"><?php echo $donnees['Issue_description'] ?></a>
+            </li>
+            <?php } ?>
+           
+            </ul>
+          </div>
         </div>
      </div>
 	

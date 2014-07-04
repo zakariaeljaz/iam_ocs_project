@@ -19,6 +19,7 @@ else{
 	session_start();
 	$_SESSION['login_type'] = $donnees['type'];
 	$_SESSION['username'] = $username;
+	$_SESSION['user_id'] = $donnees['id'];
 	//redirection
 	if($donnees['type'] == "huawei")
 		header('Location: /iam_ocs_project.git/trunk/adminpage.php');
