@@ -8,7 +8,7 @@ if($_SESSION['login_type'] != "huawei"){
    header('Location: /iam_ocs_project.git/trunk/index.php');	
   exit();
 }
-
+include('bdd.php');
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ if($_SESSION['login_type'] != "huawei"){
             
             <li ><a href="ticket_form.php">Ticket Form</a></li>
             <li class="active"><a href="adminpage.php">Admin Panel</a></li>
-	    <li> <a href="logout.php">Déconnexion</a></li>
+	    <li class="navbar-right"> <a href="logout.php">Déconnexion</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -61,8 +61,44 @@ if($_SESSION['login_type'] != "huawei"){
       <div class="starter-template">
         <h1>Welcome</h1>
         <p class="lead">Bienvenue dans l'espace d'administration des tickets</p>
+        <br />
+        <br />
+        <script type="text/javascript">
+         $('#myTab a').click(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+          })
+        </script>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#attente" role="tab" data-toggle="tab">En attente</a></li>
+          <li><a href="#encours" role="tab" data-toggle="tab">En cours</a></li>
+        </ul>
 
-  </div>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="attente">
+            <ul class="list-group">
+            <?php $reponse = $bdd->prepare('SELECT * FROM MS_CS WHERE taken_by = ?'); ?>
+            <?php $reponse->execute(array(0)); ?>
+            <?php while ($donnees = $reponse->fetch()){ ?>
+
+             <li class="list-group-item">
+              <span class="badge"><?php echo $donnees['Priority'] ?></span>
+                <a href="#"><?php echo $donnees['Issue_description'] ?></a>
+            </li>
+            <?php } ?>
+           
+            </ul>
+
+
+
+
+
+
+          </div>
+          <div class="tab-pane" id="encours">...</div>
+        </div>
+     </div>
 	
 
 
