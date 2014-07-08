@@ -60,7 +60,7 @@ include('bdd.php');
 
       <div class="starter-template">
         <h1>Welcome</h1>
-        <p class="lead">Bienvenue dans l'espace d'administration des tickets</p>
+        <p class="lead">Bienvenue <span style="font-weight:bold;"><?php echo strtoupper($_SESSION['username']) ?></span> dans l'espace d'administration des tickets</p>
         <br />
         <br />
         <script type="text/javascript">
@@ -73,6 +73,8 @@ include('bdd.php');
           <li class="active"><a href="#attente" role="tab" data-toggle="tab">En attente</a></li>
           <li><a href="#encours" role="tab" data-toggle="tab">En cours</a></li>
           <li><a href="#termine" role="tab" data-toggle="tab">Terminé</a></li>
+          <li><a href="#ms_stats" role="tab" data-toggle="tab">MS Stats</a></li>
+          <li><a href="#cs_stats" role="tab" data-toggle="tab">CS Stats</a></li>
         </ul>
 
         <!-- Tab panes -->
@@ -108,7 +110,7 @@ include('bdd.php');
               <span class="badge"><?php echo $donnees['Priority'] ?></span>
                             <span class="badge"><?php echo $donnees['Issue_type'] ?></span>
 
-                <a href="#"><?php echo $donnees['Issue_description'] ?></a>
+                <a href="edit_ticket.php?id=<?php echo $donnees['id'] ?>"><?php echo $donnees['Issue_description'] ?></a>
             </li>
             <?php } ?>
            
@@ -130,6 +132,15 @@ include('bdd.php');
             <?php } ?>
            
             </ul>
+          </div>
+
+
+           <div class="tab-pane" id="ms_stats">
+             
+          </div>
+
+          <div class="tab-pane" id="cs_stats">
+             
           </div>
 
         </div>
