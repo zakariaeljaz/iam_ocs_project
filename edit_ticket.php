@@ -105,12 +105,14 @@ include('bdd.php');
       <input class="form-control" type="date" placeholder="type here...">
     </div>
   </div>
+    <?php if($donnees['Issue_type'] == "MS Maintenance Activity") {?>
   <div class="form-group">
     <label class="col-sm-2 control-label">MS Type</label>
     <div class="col-sm-10">
       <input class="form-control" type="text" placeholder="MS type here...">
     </div>
   </div>
+  <?php } ?>
   <div class="form-group">
     <label class="col-sm-2 control-label">Node/Network Element</label>
     <div class="col-sm-10">
@@ -136,7 +138,7 @@ include('bdd.php');
     </div>
   </div>
   <button type="submit" class="btn btn-default btn-lg">Update ticket</button>
-  <a class="btn btn-default btn-lg" href="#" role="button">Close ticket</a>
+  <a class="btn btn-default btn-lg" href="close_ticket.php?id=<?php echo $_GET['id'] ?>" role="button">Close ticket</a>
 
 </form>
 

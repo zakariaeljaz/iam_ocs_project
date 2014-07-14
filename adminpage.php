@@ -126,8 +126,8 @@ include('bdd.php');
              <li class="list-group-item">
               <span class="badge"><?php echo $donnees['Priority'] ?></span>
                             <span class="badge"><?php echo $donnees['Issue_type'] ?></span>
-
-                <a href="#"><?php echo $donnees['Issue_description'] ?></a>
+                            <span class="badge">Closed</span>
+                <?php echo $donnees['Issue_description'] ?>
             </li>
             <?php } ?>
            
