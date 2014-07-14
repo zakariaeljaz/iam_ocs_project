@@ -87,7 +87,59 @@ include('bdd.php');
       <textarea class="form-control"  placeholder="Summary here..."></textarea>
     </div>
   </div>
+  <div class="form-group">
+    <label  class="col-sm-2 control-label">Recommandation</label>
+    <div class="col-sm-10">
+      <textarea class="form-control"  placeholder="Recommandation here..."></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Type</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" placeholder="type here...">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Date identified</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="date" placeholder="type here...">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">MS Type</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" placeholder="MS type here...">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Node/Network Element</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" placeholder="Node/Network Element here...">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Entered by (IAM)</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" placeholder="Entered by (IAM) here...">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Onsite presence</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" placeholder="Onsite presence here...">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Palliative resolution date </label>
+    <div class="col-sm-10">
+      <input class="form-control" type="date" placeholder="Palliative resolution date here...">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default btn-lg">Update ticket</button>
+  <a class="btn btn-default btn-lg" href="#" role="button">Close ticket</a>
+
 </form>
+
   <?php } ?>
         </div>
       
