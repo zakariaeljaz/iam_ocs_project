@@ -7,7 +7,7 @@ include('bdd.php');
 
 // On essaye de trouver l'utilisateur dans la bdd
 $reponse = $bdd->prepare('SELECT * FROM users WHERE login= ? AND password = ?');
-$reponse->execute(array($username,$password));
+$reponse->execute(array($username,sha1($password)));
 $donnees = $reponse->fetch();
 if($donnees == NULL){
     header('Location: /iam_ocs_project.git/trunk/index.php');
