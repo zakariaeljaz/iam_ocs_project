@@ -20,6 +20,7 @@ include('bdd.php');
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
+    <script src="js/Chart.min.js"></script>
 
     <title>IAM OCS PROJECT</title>
 
@@ -136,7 +137,10 @@ include('bdd.php');
 
 
            <div class="tab-pane" id="ms_stats">
-             
+             <br />
+             <br />
+                 <canvas id="buyers" width="400" height="400"></canvas>
+
           </div>
 
           <div class="tab-pane" id="cs_stats">
@@ -153,12 +157,32 @@ include('bdd.php');
 
     </div><!-- /.container -->
 		
-
-
+    <script>
+            // line chart data
+            var buyerData = {
+                labels : ["January","February","March","April","May","June"],
+                datasets : [
+                {
+                    fillColor : "rgba(172,194,132,0.4)",
+                    strokeColor : "#ACC26D",
+                    pointColor : "#fff",
+                    pointStrokeColor : "#9DB86D",
+                    data : [203,156,99,251,305,247]
+                }
+            ]
+            }
+            // get line chart canvas
+            var buyers = document.getElementById('buyers').getContext('2d');
+            // draw line chart
+            new Chart(buyers).Line(buyerData);
+            // pie chart data
+            
+        </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
