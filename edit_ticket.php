@@ -62,7 +62,7 @@ include('bdd.php');
         <?php $reponse = $bdd->prepare('SELECT * FROM MS_CS WHERE id = ?'); ?>
             <?php $reponse->execute(array($_GET['id'])); ?>
             <?php while ($donnees = $reponse->fetch()){ ?>
-  <form class="form-horizontal" role="form" method="post" action="traitement2.php">
+  <form class="form-horizontal" role="form" method="post" action="traitement2.php?id=<?php echo $donnees['id']; ?>">
   <div class="form-group">
     <label class="col-sm-2 control-label">Priority</label>
     <div class="col-sm-10">
@@ -84,57 +84,51 @@ include('bdd.php');
   <div class="form-group">
     <label  class="col-sm-2 control-label">Summary</label>
     <div class="col-sm-10">
-      <textarea class="form-control"  placeholder="Summary here..." name="summary"></textarea>
+      <textarea class="form-control"  placeholder="<?php if (isset($donnees['Summary'])){echo $donnees['Summary']; }?>" name="summary"></textarea>
     </div>
   </div>
   <div class="form-group">
     <label  class="col-sm-2 control-label">Recommandation</label>
     <div class="col-sm-10">
-      <textarea class="form-control"  placeholder="Recommandation here..." name="recommandation"></textarea>
+      <textarea class="form-control"  placeholder="<?php if (isset($donnees['Recommendations'])){echo $donnees['Recommendations']; } ?>" name="recommandation"></textarea>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Type</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" placeholder="type here..." name="type">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Date identified</label>
-    <div class="col-sm-10">
-      <input class="form-control" type="date"  name="date">
+      <input class="form-control" type="text" placeholder="<?php if (isset($donnees['Type'])){echo $donnees['Type']; }?>" name="type">
     </div>
   </div>
     <?php if($donnees['Issue_type'] == "MS Maintenance Activity") {?>
   <div class="form-group">
     <label class="col-sm-2 control-label">MS Type</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" placeholder="MS type here..." name="ms_type">
+      <input class="form-control" type="text" placeholder="<?php if (isset($donnees['MS_Type'])){echo $donnees['MS_Type']; } ?>" name="ms_type">
     </div>
   </div>
   <?php } ?>
   <div class="form-group">
     <label class="col-sm-2 control-label">Node/Network Element</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" placeholder="Node/Network Element here..." name="node">
+      <input class="form-control" type="text" placeholder="<?php if (isset($donnees['Nodenetwork_element'])){echo $donnees['Nodenetwork_element']; }?>" name="node">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Entered by (IAM)</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" placeholder="Entered by (IAM) here..." name="entered_by">
+      <input class="form-control" type="text" placeholder="<?php if (isset($donnees['entered_by_iam'])){echo $donnees['entered_by_iam']; } ?>" name="entered_by">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Onsite presence</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" placeholder="Onsite presence here..." name="onsite">
+      <input class="form-control" type="text" placeholder="<?php if (isset($donnees['Onsite_presence'])){echo $donnees['Onsite_presence']; } ?>" name="onsite">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Palliative resolution date </label>
     <div class="col-sm-10">
-      <input class="form-control" type="date" placeholder="Palliative resolution date here..." name="palliative">
+      <input class="form-control" type="date" name="palliative">
     </div>
   </div>
   <button type="submit" class="btn btn-default btn-lg">Update ticket</button>
