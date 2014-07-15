@@ -46,7 +46,7 @@ include('bdd.php');
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-	    <li ><a href="index.php">Accueil</a></li>
+      <li ><a href="index.php">Accueil</a></li>
              <li class="active"><a href="ticket_form.php">Ticket Form</a></li>
             <li><a href="adminpage.php">Admin Panel</a></li>
             <li> <a href="logout.php">Déconnexion</a></li>
@@ -62,7 +62,7 @@ include('bdd.php');
         <?php $reponse = $bdd->prepare('SELECT * FROM MS_CS WHERE id = ?'); ?>
             <?php $reponse->execute(array($_GET['id'])); ?>
             <?php while ($donnees = $reponse->fetch()){ ?>
-	<form class="form-horizontal" role="form" method="post" action="traitement2.php">
+  <form class="form-horizontal" role="form" method="post" action="traitement2.php">
   <div class="form-group">
     <label class="col-sm-2 control-label">Priority</label>
     <div class="col-sm-10">
@@ -84,57 +84,57 @@ include('bdd.php');
   <div class="form-group">
     <label  class="col-sm-2 control-label">Summary</label>
     <div class="col-sm-10">
-      <textarea class="form-control"  placeholder="Summary here..."></textarea>
+      <textarea class="form-control"  placeholder="Summary here..." name="summary"></textarea>
     </div>
   </div>
   <div class="form-group">
     <label  class="col-sm-2 control-label">Recommandation</label>
     <div class="col-sm-10">
-      <textarea class="form-control"  placeholder="Recommandation here..."></textarea>
+      <textarea class="form-control"  placeholder="Recommandation here..." name="recommandation"></textarea>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Type</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" placeholder="type here...">
+      <input class="form-control" type="text" placeholder="type here..." name="type">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Date identified</label>
     <div class="col-sm-10">
-      <input class="form-control" type="date" placeholder="type here...">
+      <input class="form-control" type="date"  name="date">
     </div>
   </div>
     <?php if($donnees['Issue_type'] == "MS Maintenance Activity") {?>
   <div class="form-group">
     <label class="col-sm-2 control-label">MS Type</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" placeholder="MS type here...">
+      <input class="form-control" type="text" placeholder="MS type here..." name="ms_type">
     </div>
   </div>
   <?php } ?>
   <div class="form-group">
     <label class="col-sm-2 control-label">Node/Network Element</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" placeholder="Node/Network Element here...">
+      <input class="form-control" type="text" placeholder="Node/Network Element here..." name="node">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Entered by (IAM)</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" placeholder="Entered by (IAM) here...">
+      <input class="form-control" type="text" placeholder="Entered by (IAM) here..." name="entered_by">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Onsite presence</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" placeholder="Onsite presence here...">
+      <input class="form-control" type="text" placeholder="Onsite presence here..." name="onsite">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Palliative resolution date </label>
     <div class="col-sm-10">
-      <input class="form-control" type="date" placeholder="Palliative resolution date here...">
+      <input class="form-control" type="date" placeholder="Palliative resolution date here..." name="palliative">
     </div>
   </div>
   <button type="submit" class="btn btn-default btn-lg">Update ticket</button>
