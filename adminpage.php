@@ -89,7 +89,7 @@ include('bdd.php');
              <li class="list-group-item">
               <span class="badge"><?php echo $donnees['Priority'] ?></span>
               <span class="badge"><?php echo $donnees['Issue_type'] ?></span>
-                <a href="take_ticket.php?id=<?php echo $donnees['id'] ?>"><?php echo $donnees['Issue_description'] ?></a>
+                <a href="take_ticket.php?id=<?php echo $donnees['id'] ?>" title="Take ticket"><?php echo $donnees['Issue_description'] ?></a>
             </li>
             <?php } ?>
            
@@ -111,7 +111,7 @@ include('bdd.php');
               <span class="badge"><?php echo $donnees['Priority'] ?></span>
                             <span class="badge"><?php echo $donnees['Issue_type'] ?></span>
 
-                <a href="edit_ticket.php?id=<?php echo $donnees['id'] ?>"><?php echo $donnees['Issue_description'] ?></a>
+                <a class="popover-link" href="edit_ticket.php?id=<?php echo $donnees['id'] ?>" data-toggle="popover" title="Edit ticket"><?php echo $donnees['Issue_description'] ?></a>
             </li>
             <?php } ?>
            
@@ -158,6 +158,10 @@ include('bdd.php');
     </div><!-- /.container -->
 		
     <script>
+            $('.popover-link').popover({
+            trigger: 'hover'
+            });
+
             // line chart data
             var buyerData = {
                 labels : ["January","February","March","April","May","June"],
