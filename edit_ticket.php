@@ -64,64 +64,66 @@ include('bdd.php');
             <?php while ($donnees = $reponse->fetch()){ ?>
   <form class="form-horizontal" role="form" method="post" action="traitement2.php?id=<?php echo $donnees['id']; ?>">
   <div class="form-group">
+        <input type="hidden" name="type" value="<?php echo $donnees['id']; ?>">
+
     <label class="col-sm-2 control-label">Priority</label>
     <div class="col-sm-10">
-      <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $donnees['Priority'] ?>" disabled>
+      <input class="form-control" id="disabledInput" type="text" value="<?php echo $donnees['Priority'] ?>" disabled>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Issue type</label>
     <div class="col-sm-10">
-      <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $donnees['Issue_type'] ?>" disabled>
+      <input class="form-control" id="disabledInput" type="text" value="<?php echo $donnees['Issue_type'] ?>" disabled>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Issue description</label>
     <div class="col-sm-10">
-      <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $donnees['Issue_description'] ?>" disabled>
+      <input class="form-control" id="disabledInput" type="text" value="<?php echo $donnees['Issue_description'] ?>" disabled>
     </div>
   </div>
   <div class="form-group">
     <label  class="col-sm-2 control-label">Summary</label>
     <div class="col-sm-10">
-      <textarea class="form-control" id="summary" placeholder="<?php if (isset($donnees['Summary'])){echo $donnees['Summary']; }?>" name="summary"></textarea>
+      <textarea class="form-control" id="summary" value="" name="summary"><?php if (isset($donnees['Summary'])){echo $donnees['Summary']; }?></textarea>
     </div>
   </div>
   <div class="form-group">
     <label  class="col-sm-2 control-label">Recommandation</label>
     <div class="col-sm-10">
-      <textarea class="form-control" id="recommandation" placeholder="<?php if (isset($donnees['Recommendations'])){echo $donnees['Recommendations']; } ?>" name="recommandation"></textarea>
+      <textarea class="form-control" id="recommandation" value="" name="recommandation"><?php if (isset($donnees['Recommendations'])){echo $donnees['Recommendations']; } ?></textarea>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Type</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" id="type" placeholder="<?php if (isset($donnees['Type'])){echo $donnees['Type']; }?>" name="type">
+      <input class="form-control" type="text" id="type" value="<?php if (isset($donnees['Type'])){echo $donnees['Type']; }?>" name="type">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">MS Type</label>
     <div class="col-sm-10">
-      <input class="form-control" id="ms_type" type="text" placeholder="<?php if (isset($donnees['MS_Type'])){echo $donnees['MS_Type']; } ?>" name="ms_type">
+      <input class="form-control" id="ms_type" type="text" value="<?php if (isset($donnees['MS_Type'])){echo $donnees['MS_Type']; } ?>" name="ms_type">
     </div>
   </div>
   
   <div class="form-group">
     <label class="col-sm-2 control-label">Node/Network Element</label>
     <div class="col-sm-10">
-      <input class="form-control" id="node" type="text" placeholder="<?php if (isset($donnees['Nodenetwork_element'])){echo $donnees['Nodenetwork_element']; }?>" name="node">
+      <input class="form-control" id="node" type="text" value="<?php if (isset($donnees['Nodenetwork_element'])){echo $donnees['Nodenetwork_element']; }?>" name="node">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Entered by (IAM)</label>
     <div class="col-sm-10">
-      <input class="form-control" id="entered_by" type="text" placeholder="<?php if (isset($donnees['entered_by_iam'])){echo $donnees['entered_by_iam']; } ?>" name="entered_by">
+      <input class="form-control" id="entered_by" type="text" value="<?php if (isset($donnees['entered_by_iam'])){echo $donnees['entered_by_iam']; } ?>" name="entered_by">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Onsite presence</label>
     <div class="col-sm-10">
-      <input class="form-control" id="onsite" type="text" placeholder="<?php if (isset($donnees['Onsite_presence'])){echo $donnees['Onsite_presence']; } ?>" name="onsite">
+      <input class="form-control" id="onsite" type="text" value="<?php if (isset($donnees['Onsite_presence'])){echo $donnees['Onsite_presence']; } ?>" name="onsite">
     </div>
   </div>
   <div class="form-group">

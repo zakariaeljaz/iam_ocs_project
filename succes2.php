@@ -45,7 +45,7 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Probléme resolu</h1><br /><br />
+        <h1>Ticket mis à jour..</h1><br /><br />
 	<a href="ticket_form.php">retour</a>
    
     </div><!-- /.container -->
