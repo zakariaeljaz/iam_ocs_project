@@ -158,10 +158,7 @@ include('bdd.php');
     </div><!-- /.container -->
 		
     <script>
-            $('.popover-link').popover({
-            trigger: 'hover'
-            });
-
+        
             // line chart data
             var buyerData = {
                 labels : ["January","February","March","April","May","June"],
