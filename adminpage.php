@@ -71,7 +71,6 @@ include('bdd.php');
           })
         </script>
         <ul class="nav nav-tabs" role="tablist">
-          <li class="active"><a href="#attente" role="tab" data-toggle="tab">En attente</a></li>
           <li><a href="#encours" role="tab" data-toggle="tab">En cours</a></li>
           <li><a href="#termine" role="tab" data-toggle="tab">Terminé</a></li>
           <li><a href="#ms_stats" role="tab" data-toggle="tab">MS Stats</a></li>
@@ -80,27 +79,7 @@ include('bdd.php');
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div class="tab-pane active" id="attente">
-            <ul class="list-group">
-            <?php $reponse = $bdd->prepare('SELECT * FROM MS_CS WHERE taken_by = ?'); ?>
-            <?php $reponse->execute(array(0)); ?>
-            <?php while ($donnees = $reponse->fetch()){ ?>
-
-             <li class="list-group-item">
-              <span class="badge"><?php echo $donnees['Priority'] ?></span>
-              <span class="badge"><?php echo $donnees['Issue_type'] ?></span>
-                <a href="take_ticket.php?id=<?php echo $donnees['id'] ?>" title="Take ticket"><?php echo $donnees['Issue_description'] ?></a>
-            </li>
-            <?php } ?>
-           
-            </ul>
-
-
-
-
-
-
-          </div>
+          
           <div class="tab-pane" id="encours">
              <ul class="list-group">
             <?php $reponse = $bdd->prepare('SELECT * FROM MS_CS WHERE taken_by = ?'); ?>
