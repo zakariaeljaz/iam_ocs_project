@@ -10,7 +10,7 @@ $reponse = $bdd->prepare('SELECT * FROM users WHERE login= ? AND password = ?');
 $reponse->execute(array($username,sha1($password)));
 $donnees = $reponse->fetch();
 if($donnees == NULL){
-    header('Location: /iam_ocs_project.git/trunk/index.php');
+    header('Location: /iam_ocs_project.git/trunk/superadmin.php');
 	exit();
 }
 else{
@@ -21,10 +21,11 @@ else{
 	$_SESSION['username'] = $username;
 	$_SESSION['user_id'] = $donnees['id'];
 	//redirection
-	if($donnees['type'] == "huawei")
-		header('Location: /iam_ocs_project.git/trunk/adminpage.php');
+	if($donnees['type'] == "root")
+		header('Location: /iam_ocs_project.git/trunk/rootpanel.php');
 	else
-		header('Location: /iam_ocs_project.git/trunk/ticket_form.php');
+		 header('Location: /iam_ocs_project.git/trunk/superadmin.php');
+
 	exit();
 
 }

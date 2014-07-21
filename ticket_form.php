@@ -60,24 +60,14 @@ if($_SESSION['login_type'] != "iam"){
         <h1>Générer un ticket de support</h1><br /><br />
 	<form method="post" action="traitement.php">
 	  <select class="form-control input-lg" id="type" name="type">
-    <option value="">--</option>
-	    <option value="MS">MS Maintenance Activity</option>
-	    <option value="CS">CS Maintenance Activity</option>
+	    <option>MS Maintenance Activity</option>
+	    <option>CS Maintenance Activity</option>
 	  </select><br />
-    <select class="form-control input-lg" id="priority" name="priority">
-
-    <option value="">--</option>
-    <option class="MS" value="low-p">Low Priority</option>
-    <option class="MS" value="med-p">Medium Priority</option>
-    <option class="MS" value="hi-p">High Priority</option>
-    <option class="CS" value="low-s">Low Severity</option>
-    <option class="CS" value="med-s">Medium Severity</option>
-    <option class="CS" value="hi-s">High Severity</option>
-    <option class="CS" value="cri-s">Critical Severity</option>
-
-	  </select>
-    
-    <br />
+	  <select class="form-control input-lg" id="priority" name="priority">
+	    <option>Low Priority</option>
+	    <option>Medium Priority</option>
+	    <option>High Priority</option>
+	  </select><br />
 	  <div class="input-group input-group-lg">
 	    <input type="text" class="form-control" placeholder="Issue Description" name="description">
 	    <span class="input-group-btn">
@@ -85,7 +75,6 @@ if($_SESSION['login_type'] != "iam"){
 	    </span>
 	  </div>
 	</form>
- 
       </div>
       
     </div><!-- /.container -->
@@ -100,10 +89,5 @@ if($_SESSION['login_type'] != "iam"){
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://raw.github.com/tuupola/jquery_chained/master/jquery.chained.min.js"></script>
-    <script type="text/javascript">
-    $("#priority").chained("#type");
-    </script>
-
   </body>
 </html>

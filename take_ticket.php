@@ -8,7 +8,7 @@ $req->execute(array(
 	'id'=>$_GET['id']
 	));
 // Redirection vers la page d'administration
-header('Location: /iam_ocs_project.git/trunk/adminpage.php'); 
+header('Location: /iam_ocs_project.git/trunk/superadmin.php'); 
 exit();
 
 

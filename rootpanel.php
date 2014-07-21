@@ -1,11 +1,7 @@
-<?php 
+<?php
 session_start();
-if($_SESSION['login_type'] == "iam"){
-   header('Location: /iam_ocs_project.git/trunk/ticket_form.php');  
-  exit();
-}
-if($_SESSION['login_type'] != "huawei"){
-   header('Location: /iam_ocs_project.git/trunk/index.php');  
+if($_SESSION['login_type'] != "root"){
+   header('Location: /iam_ocs_project.git/trunk/superadmin.php');  
   exit();
 }
 include('bdd.php');
@@ -45,15 +41,6 @@ include('bdd.php');
           </button>
           <a class="navbar-brand" href="#">IAM OCS PROJECT</a>
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-      <li ><a href="index.php">Accueil</a></li>
-            
-            <li ><a href="ticket_form.php">Ticket Form</a></li>
-            <li class="active"><a href="adminpage.php">Admin Panel</a></li>
-      <li class="navbar-right"> <a href="logout.php">Déconnexion</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
       </div>
     </div>
 
@@ -61,7 +48,7 @@ include('bdd.php');
 
       <div class="starter-template">
         <h1>Welcome</h1>
-        <p class="lead">Bienvenue <span style="font-weight:bold;"><?php echo strtoupper($_SESSION['username']) ?></span> dans l'espace d'administration des tickets</p>
+        <p class="lead">Bienvenue dans l'espace d'administration des tickets</p>
         <br />
         <br />
         <script type="text/javascript">
@@ -103,15 +90,18 @@ include('bdd.php');
           </div>
           <div class="tab-pane" id="encours">
              <ul class="list-group">
-            <?php $reponse = $bdd->prepare('SELECT * FROM MS_CS WHERE taken_by = ?'); ?>
+            <?php $reponse = $bdd->prepare('SELECT * FROM MS_CS AS M,users AS u WHERE M.taken_by != 0 AND M.taken_by != -1 AND M.taken_by = U.id'); ?>
             <?php $reponse->execute(array($_SESSION['user_id'])); ?>
+
             <?php while ($donnees = $reponse->fetch()){ ?>
 
              <li class="list-group-item">
+              
               <span class="badge"><?php echo $donnees['Priority'] ?></span>
-                            <span class="badge"><?php echo $donnees['Issue_type'] ?></span>
+              <span class="badge"><?php echo $donnees['Issue_type'] ?></span>
+              <span class="badge"><?php echo $donnees['login'] ?></span>
 
-                <a class="popover-link" href="edit_ticket.php?id=<?php echo $donnees['id'] ?>" data-toggle="popover" title="Edit ticket"><?php echo $donnees['Issue_description'] ?></a>
+                <span><?php echo $donnees['Issue_description'] ?></span>
             </li>
             <?php } ?>
            

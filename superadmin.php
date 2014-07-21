@@ -1,3 +1,7 @@
+
+<?php
+include('bdd.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,29 +35,40 @@
           </button>
           <a class="navbar-brand" href="#">IAM OCS PROJECT</a>
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-      <li ><a href="index.php">Accueil</a></li>
-             <li class="active"><a href="ticket_form.php">Ticket Form</a></li>
-            <li><a href="adminpage.php">Admin Panel</a></li>
-      <li> <a href="logout.php">Déconnexion</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+       
       </div>
     </div>
 
     <div class="container">
 
       <div class="starter-template">
-        <h1>Ticket mis à jour..</h1><br /><br />
+        <h1>Welcome</h1>
+        <p class="lead">Bienvenue dans l'espace superadmin</p>
+	<h3>Espace d'authentification </h3>
+	<form role="form" method="post" action="loginsuperadmin.php">
+  		<div class="form-group">
+    		<label for="exampleInputEmail1">Identifiant</label>
+   		 <input type="text" class="form-control"  name="username" placeholder="Identifiant">
+  		</div>
+  		<div class="form-group">
+	       <label for="exampleInputPassword1">Password</label>
+	       <input type="password" class="form-control"  name="password" placeholder="Mot de passe">
+	       <div class="checkbox">
+                 <label>
+                 <input type="checkbox">Garder ma session active
+                 </label>
+              </div>
+      <button type="submit" class="btn btn-default">Connexion</button>
+      </form>
+  </div>
+	
 
-  <a href="ticket_form.php">retour</a>
-   
-    </div><!-- /.container -->
-    
+
+
       </div>
 
     </div><!-- /.container -->
+		
 
 
     <!-- Bootstrap core JavaScript
@@ -63,5 +78,3 @@
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
-
-
