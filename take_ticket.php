@@ -15,7 +15,7 @@ catch(Exception $e)
 $login=$_GET['var'];
 $id=$_GET['id'];
 
-$reponse = $bdd->prepare(' UPDATE MS_CS  SET taken_by = ( SELECT id FROM users WHERE login = :login) WHERE id = :id');
+$reponse = $bdd->prepare(' UPDATE MS_CS  SET taken_by = ( SELECT id FROM users WHERE login = :login) , Current_statut = "Work in progress" WHERE id = :id');
 $reponse->execute (array('id' => $id,'login' => $login));
 
 
