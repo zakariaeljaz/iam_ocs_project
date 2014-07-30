@@ -26,6 +26,17 @@ include('bdd.php');
     <!-- Custom styles for this template -->
     <link href="style.css" rel="stylesheet">
 
+
+    <script type="text/javascript">
+        <!--
+            function prompter(id) {
+            this.id= id;
+            var variable = prompt("veuillez saisir un nom", "");
+            window.location.href = "take_ticket.php?var="+variable+"&id="+id; 
+            }
+        //-->
+    </script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   </head>
 
   <body>
@@ -81,7 +92,9 @@ include('bdd.php');
              <li class="list-group-item">
               <span class="badge"><?php echo $donnees['Priority'] ?></span>
               <span class="badge"><?php echo $donnees['Issue_type'] ?></span>
-                <a href="take_ticket.php?id=<?php echo $donnees['id'] ?>" title="Take ticket"><?php echo $donnees['Issue_description'] ?></a>
+
+                <a  href="javascript:prompter('<?php echo $donnees['id'] ?>')" title="Take ticket"><?php echo $donnees['Issue_description'] ?></a>
+                
             </li>
             <?php } ?>
            
@@ -96,7 +109,7 @@ include('bdd.php');
           <div class="tab-pane" id="encours">
              <ul class="list-group">
             <?php $reponse = $bdd->prepare('SELECT * FROM MS_CS AS M,users AS u WHERE M.taken_by != 0 AND M.taken_by != -1 AND M.taken_by = U.id'); ?>
-            <?php $reponse->execute(array($_SESSION['user_id'])); ?>
+            <!--<?php $reponse->execute(array($_SESSION['user_id'])); ?>-->
 
             <?php while ($donnees = $reponse->fetch()){ ?>
 
