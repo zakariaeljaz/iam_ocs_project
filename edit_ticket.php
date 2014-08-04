@@ -65,22 +65,23 @@ include('bdd.php');
   <form class="form-horizontal" role="form" method="post" action="traitement2.php?id=<?php echo $donnees['id']; ?>">
   <div class="form-group">
         <input type="hidden" name="type" value="<?php echo $donnees['id']; ?>">
+        <input type="hidden" name="email" value="<?php echo $donnees['email']; ?>">
 
     <label class="col-sm-2 control-label">Priority</label>
     <div class="col-sm-10">
-      <input class="form-control" id="disabledInput" type="text" value="<?php echo $donnees['Priority'] ?>" disabled>
+      <input class="form-control" id="disabledInput" type="text" name="priority" value="<?php echo $donnees['Priority'] ?>" disabled>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Issue type</label>
     <div class="col-sm-10">
-      <input class="form-control" id="disabledInput" type="text" value="<?php echo $donnees['Issue_type'] ?>" disabled>
+      <input class="form-control" id="disabledInput" type="text" name="issue_type" value="<?php echo $donnees['Issue_type'] ?>" disabled>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Issue description</label>
     <div class="col-sm-10">
-      <input class="form-control" id="disabledInput" type="text" value="<?php echo $donnees['Issue_description'] ?>" disabled>
+      <input class="form-control" id="disabledInput" name="description" type="text" value="<?php echo $donnees['Issue_description'] ?>" disabled>
     </div>
   </div>
   <div class="form-group">

@@ -22,7 +22,7 @@ $onsite= $_POST['onsite'];
 $palliative= $_POST['palliative'];
 
 
-
+include('email.php');
 
 
 $reponse = $bdd->prepare(' UPDATE MS_CS  SET Summary = :summary, Recommendations = :recommandation, Type = :type, MS_type = :ms_type, Nodenetwork_element = :node, Onsite_presence = :onsite, Entered_by_iam = :entered_by, Palliative_resolution_date = :palliative WHERE id = :id');
