@@ -32,6 +32,9 @@ include('bdd.php');
             function prompter(id) {
             this.id= id;
             var variable = prompt("veuillez saisir un nom", "");
+
+
+            
             window.location.href = "take_ticket.php?var="+variable+"&id="+id; 
             }
         //-->
