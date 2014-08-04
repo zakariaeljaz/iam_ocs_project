@@ -74,6 +74,7 @@ if($_SESSION['login_type'] != "iam"){
 	  </select><br />
 	  <div class="input-group input-group-lg">
 	    <input type="text" class="form-control" placeholder="Issue Description" name="description">
+   
 	    <span class="input-group-btn">
               <button class="btn btn-default" type="submit">Send</button>
 	    </span>

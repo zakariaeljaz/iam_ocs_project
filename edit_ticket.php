@@ -46,9 +46,11 @@ include('bdd.php');
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-      <li ><a href="index.php">Accueil</a></li>
+             <li ><a href="index.php">Accueil</a></li>
              <li class="active"><a href="ticket_form.php">Ticket Form</a></li>
-            <li><a href="adminpage.php">Admin Panel</a></li>
+             <li><a href="adminpage.php">Admin Panel</a></li>
+           </ul>
+           <ul class="nav navbar-nav" style="float : right;">
             <li> <a href="logout.php">Déconnexion</a></li>
           </ul>
         </div><!--/.nav-collapse -->

@@ -15,11 +15,19 @@ catch(Exception $e)
 $login=$_GET['var'];
 $id=$_GET['id'];
 
+$reponse = $bdd->prepare(' SELECT id FROM users WHERE login = :login');
+$reponse->execute (array('login' => $login));
+$donnees = $reponse->fetch();
+
 $reponse = $bdd->prepare(' UPDATE MS_CS  SET taken_by = ( SELECT id FROM users WHERE login = :login) , Current_statut = "Work in progress" WHERE id = :id');
 $reponse->execute (array('id' => $id,'login' => $login));
 
 
 header('Location: /iam_ocs_project.git/trunk/succes3.php');
+
+
+
+
 ?>
 
 

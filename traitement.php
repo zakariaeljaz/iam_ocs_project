@@ -17,7 +17,7 @@ catch(Exception $e)
 				else { 
 $priority=$_POST['priority'];
 $type=$_POST['type'];
-$reponse = $bdd->prepare(' INSERT INTO MS_CS (Priority,Issue_description,Issue_type) VALUES(:priority, :description, :type)');
+$reponse = $bdd->prepare(' INSERT INTO MS_CS (Priority,Issue_description,Issue_type,Date_identified) VALUES(:priority, :description, :type, CURDATE())');
 $reponse->execute (array('priority' => $priority,'description'=> $description,'type' => $type));
 					}	
 header('Location: /iam_ocs_project.git/trunk/succes.php');
