@@ -11,28 +11,19 @@ if($_SESSION['login_type'] != "iam"){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>IAM OCS PROJECT</title>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/fileinput.js" type="text/javascript"></script>
+    </head>
+    <body>
 
-    <title>IAM OCS PROJECT</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="style.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -45,7 +36,7 @@ if($_SESSION['login_type'] != "iam"){
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-	          <li ><a href="index.php">Accueil</a></li>
+              <li ><a href="index.php">Accueil</a></li>
             <li class="active"><a href="ticket_form.php">Ticket Form</a></li>
             <li><a href="adminpage.php">Admin Panel</a></li>
           </ul>
@@ -56,43 +47,63 @@ if($_SESSION['login_type'] != "iam"){
           
         </div><!--/.nav-collapse -->
       </div>
-    </div>
+    </div><br /><br /><br />
 
-    <div class="container">
 
-      <div class="starter-template">
-        <h1>Générer un ticket de support</h1><br /><br />
-	<form method="post" action="traitement.php">
-	  <select class="form-control input-lg" id="type" name="type">
-	    <option>MS Maintenance Activity</option>
-	    <option>CS Maintenance Activity</option>
-	  </select><br />
-	  <select class="form-control input-lg" id="priority" name="priority">
-	    <option>Low Priority</option>
-	    <option>Medium Priority</option>
-	    <option>High Priority</option>
-	  </select><br />
-	  <div class="input-group input-group-lg">
-	    <input type="text" class="form-control" placeholder="Issue Description" name="description">
-   
-	    <span class="input-group-btn">
-              <button class="btn btn-default" type="submit">Send</button>
-	    </span>
-	  </div>
-	</form>
-      </div>
-      
-    </div><!-- /.container -->
+
+        <div class="container">
+            
+        <div class="starter-template">
+        <h1><span style="padding : 0px 320px">Générer un ticket de support</span></h1><br /><br />
+        <form method="post" action="traitement.php" enctype="multipart/form-data">
+        <select class="form-control input-lg" id="type" name="type">
+        <option>MS Maintenance Activity</option>
+        <option>CS Maintenance Activity</option>
+        </select><br />
+        <select class="form-control input-lg" id="priority" name="priority">
+        <option>Low Priority</option>
+        <option>Medium Priority</option>
+        <option>High Priority</option>
+        </select><br />
+
+
+    <div class="input-group input-group-lg">
+      <input type="text" class="form-control" placeholder="Issue Description" name="description">
+      <span class="input-group-addon"></span>
+    </div><br />
     
-      </div>
-
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+                
+                <div class="form-group">
+                    <input id="file-1a" type="file" multiple=true class="file" data-preview-file-type="any" data-initial-caption="FILE" data-overwrite-initial="false">
+                </div><br />
+                
+               
+                <div class="form-group" style="padding :0px 500px">
+                   
+                    <button class="btn btn-primary">Send</button>
+                    <button class="btn btn-default" type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </body>
+  <script>
+    $("#file-1").fileinput({
+        initialPreview: ["<img src='Desert.jpg' class='file-preview-image'>", "<img src='Jellyfish.jpg' class='file-preview-image'>"],
+        overwriteInitial: false,
+        maxFileSize: 100,
+        maxFilesNum: 10
+  });
+  $("#file-3").fileinput({
+    showCaption: false,
+    browseClass: "btn btn-primary btn-lg",
+    fileType: "any"
+  });
+    $(".btn-warning").on('click', function() {
+        if ($('#file-4').attr('disabled')) {
+            $('#file-4').fileinput('enable');
+        } else {
+            $('#file-4').fileinput('disable');
+        }
+    });
+  </script>
 </html>

@@ -107,7 +107,7 @@ include('bdd.php');
   <div class="form-group">
     <label class="col-sm-2 control-label">MS Type</label>
     <div class="col-sm-10">
-      <input class="form-control" id="ms_type" type="text" value="<?php if (isset($donnees['MS_Type'])){echo $donnees['MS_Type']; } ?>" name="ms_type">
+      <input class="form-control" id="ms_type" type="text" value="<?php if (isset($donnees['MS_type'])){echo $donnees['MS_type']; } ?>" name="ms_type">
     </div>
   </div>
   
@@ -120,7 +120,7 @@ include('bdd.php');
   <div class="form-group">
     <label class="col-sm-2 control-label">Entered by (IAM)</label>
     <div class="col-sm-10">
-      <input class="form-control" id="entered_by" type="text" value="<?php if (isset($donnees['entered_by_iam'])){echo $donnees['entered_by_iam']; } ?>" name="entered_by">
+      <input class="form-control" id="entered_by" type="text" value="<?php if (isset($donnees['Entered_by_iam'])){echo $donnees['Entered_by_iam']; } ?>" name="entered_by">
     </div>
   </div>
   <div class="form-group">
@@ -132,7 +132,7 @@ include('bdd.php');
   <div class="form-group">
     <label class="col-sm-2 control-label">Palliative resolution date </label>
     <div class="col-sm-10">
-      <input class="form-control" id="palliative" type="date" name="palliative">
+      <input class="form-control" id="palliative" type="date" name="palliative" value="<?php if (isset($donnees['Palliative_resolution_date'])){echo $donnees['Palliative_resolution_date']; } ?>">
     </div>
   </div>
   <button type="submit" class="btn btn-default btn-lg">Update ticket</button>
